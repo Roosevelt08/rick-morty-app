@@ -1,3 +1,35 @@
+📌 Rick and Morty Character List
+📝 Descripción
+Esta es una aplicación en Angular que muestra una lista de personajes de Rick and Morty consumiendo una API pública. Permite buscar personajes por nombre o ID, ver detalles de cada personaje y exportar la información en PDF.
+
+🚀 Características
+✔️ Listado de personajes con imágenes y detalles básicos.
+✔️ Búsqueda en tiempo real por nombre o ID.
+✔️ Exportación de datos en PDF para cada personaje.
+✔️ Diseño responsivo y dinámico con efectos al pasar el mouse.
+
+📂 Estructura del Proyecto
+rick-morty-app/
+│── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── character-list/
+│   │   │   │   ├── character-list.component.ts
+│   │   │   │   ├── character-list.component.html
+│   │   │   │   ├── character-list.component.css
+│   │   │   ├── character-detail/
+│   │   │   │   ├── character-detail.component.ts
+│   │   │   │   ├── character-detail.component.html
+│   │   │   │   ├── character-detail.component.css
+│   │   ├── services/
+│   │   │   ├── character.service.ts
+│   │   ├── app.config.ts
+│   ├── assets/
+│   ├── main.ts
+│── README.md
+│── package.json
+│── angular.json
+
 # RickMortyApp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.4.
@@ -57,3 +89,6 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
+
