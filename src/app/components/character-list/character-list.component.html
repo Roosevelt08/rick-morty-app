@@ -13,8 +13,12 @@
     <h3>{{ character.name }}</h3>
     <p>Especie: {{ character.species }}</p>
     <p>Estado: {{ character.status }}</p>
+    
+    
+    <button (click)="generatePDF(character)">Exportar a PDF</button>
   </div>
 </div>
+
 <ng-template #loading>
   <p>Cargando personajes...</p>
 </ng-template>
