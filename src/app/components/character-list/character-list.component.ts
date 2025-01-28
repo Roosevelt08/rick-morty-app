@@ -1,50 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { CharacterService } from '../../services/character.service';
-import { Character } from '../../models/character.model';
 import { FormsModule } from '@angular/forms';
+import { CharacterService } from '../../services/character.service';
 
 @Component({
   selector: 'app-character-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule], 
+  imports: [CommonModule, FormsModule], // No necesitamos app.module.ts
   templateUrl: './character-list.component.html',
   styleUrls: ['./character-list.component.css']
 })
 export class CharacterListComponent implements OnInit {
-  characters: Character[] = [];
-  filteredCharacters: Character[] = [];
-  searchQuery: string = '';
-  loading: boolean = true;
-  errorMessage: string = '';
+  characters: any[] = [];
+  filteredCharacters: any[] = [];
+  searchTerm: string = '';
 
   constructor(private characterService: CharacterService) {}
 
   ngOnInit(): void {
-    this.characterService.getCharacters().subscribe({
-      next: (data) => {
-        console.log(data);
-        this.characters = Array.isArray(data) ? data : [];
-        this.filteredCharacters = data;
-        this.loading = false;
-      },
-      error: (error) => {
-        this.errorMessage = 'Error al cargar los personajes';
-        this.loading = false;
-        console.error(error);
-      }
+    this.characterService.getCharacters().subscribe((data) => {
+      this.characters = data; 
+      this.filteredCharacters = this.characters;
     });
   }
+  
 
-  filterCharacters(query: string) {
-    if (!query.trim()) {
-      this.filteredCharacters = this.characters; // Si no hay búsqueda, mostrar todos
-      return;
-    }
-    this.filteredCharacters = this.characters.filter(character =>
-      character.name.toLowerCase().includes(query.toLowerCase())
+  filterCharacters(): void {
+    const term = this.searchTerm.toLowerCase();
+    this.filteredCharacters = this.characters.filter(
+      (character) =>
+        character.name.toLowerCase().includes(term) ||
+        character.id.toString().includes(term)
     );
   }
-  
 }
