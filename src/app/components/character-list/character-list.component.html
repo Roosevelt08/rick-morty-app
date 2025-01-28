@@ -7,15 +7,17 @@
   />
 </div>
 
+<!-- 🔹 Contenedor de los personajes -->
 <div class="character-grid">
   <div *ngFor="let character of filteredCharacters" class="character-card">
     <img [src]="character.image" [alt]="character.name" />
     <h3>{{ character.name }}</h3>
     <p>Especie: {{ character.species }}</p>
     <p>Estado: {{ character.status }}</p>
-    
-    
     <button (click)="generatePDF(character)">Exportar a PDF</button>
+
+    <!-- Tooltip (se muestra al pasar el mouse) -->
+    <div class="tooltip">{{ character.name }} - {{ character.species }} - {{ character.status }}</div>
   </div>
 </div>
 
