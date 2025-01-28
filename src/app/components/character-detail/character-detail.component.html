@@ -1,0 +1,10 @@
+<div *ngIf="character">
+    <h2>{{ character.name }}</h2>
+    <img [src]="character.image" [alt]="character.name">
+    <p>Especie: {{ character.species }}</p>
+    <p>Estado: {{ character.status }}</p>
+    <p>Origen: {{ character.origin.name }}</p>
+    <p>Ubicación: {{ character.location.name }}</p>
+    <a routerLink="/">Volver a la lista</a>
+  </div>
+  

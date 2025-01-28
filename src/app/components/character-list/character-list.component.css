@@ -1,0 +1,16 @@
+.character-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    width: 200px;
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .character-card img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  

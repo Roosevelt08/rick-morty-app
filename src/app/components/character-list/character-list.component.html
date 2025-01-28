@@ -1,0 +1,11 @@
+<div *ngFor="let character of characters" class="character-card">
+  <img [src]="character.image" [alt]="character.name" />
+  <h3>{{ character.name }}</h3>
+  <p>Especie: {{ character.species }}</p>
+  <p>Estado: {{ character.status }}</p>
+</div>
+
+
+<ng-template #loading>
+  <p>Cargando personajes...</p>
+</ng-template>
